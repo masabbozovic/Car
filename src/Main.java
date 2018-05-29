@@ -24,7 +24,20 @@ public class Main {
         audi.fuelUp();
         audi.changeConsumption(20);
         audi.printMainAttributes();
-       
+        
+        audi.getIn();
+        audi.printMainAttributes();
+        audi.getIn();
+        audi.printMainAttributes();
+        audi.getIn();
+        audi.printMainAttributes();
+        
+        audi.getOut();
+        audi.printMainAttributes();
+        audi.getOut();
+        audi.printMainAttributes();
+        audi.getOut();
+        audi.printMainAttributes();
     }
     
 }

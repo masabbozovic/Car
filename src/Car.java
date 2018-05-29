@@ -14,11 +14,18 @@ public class Car {
     int maxFuel;
     int currentFuel;
     int consumption;
+    
+    int currentPassengers;
+    int maxPassengers;
+  
 
     public Car() {
         this.model = "default";
         this.currentFuel = 0;
         this.maxFuel = 100;
+        
+        this.currentPassengers = 1;
+        this.maxPassengers = 5;
 
     }
 
@@ -41,6 +48,7 @@ public class Car {
         System.out.println("Kapacitet rezervoara: " + this.maxFuel);
         System.out.println("Trenutno gorivo: " + this.currentFuel);
         System.out.println("Pređena kilometraža je: " + this.mileagePassed);
+        System.out.println("Trenutno putnika: " + this.currentPassengers + ", maksimalno: " + this.maxPassengers);
         System.out.println();
     }
 
@@ -79,9 +87,47 @@ public class Car {
             this.currentFuel = this.currentFuel - distance * this.consumption; 
             System.out.println("Putovali ste: " + distance);
         } else {
-            System.out.println("Nema dovoljno goriva");
+            System.out.println("Nema dovoljno goriva"); 
+    }
+   
+ }
+    
+ 
+   
+    
+    public void getIn() {
+        if (this.currentPassengers < this.maxPassengers) {
+            this.currentPassengers = this.currentPassengers + 1;
+            System.out.println("Usao jedan putnik" + this.currentPassengers);
+        } else {
+            System.out.println("Nema više slobodnih mesta");
         }
         
-  
+       
+ }
+
+    public void getOut() {
+        if (this.currentPassengers > 0) {
+            this.currentPassengers = this.currentPassengers - 1;
+            System.out.println("Izasao jedan putnik" + this.currentPassengers);
+        } else {
+            System.out.println("Nema više putnika");
+   }
+
+  }
+   
+    
+    public void getIn(int numberOfPassengers) {
+        
     }
+    public void getOut(int umberOfPassengers) {
+        
+    }
+    
+    
+    public void changeMaxPassengers(int newMax) {
+        this.maxPassengers = newMax;
+    }
+    
+    
 }
