@@ -111,21 +111,29 @@ public class Car {
 
     }
 
-//    public void getIn(int numberOfPassengers) {
-//        if (this.currentPassengers < maxPassengers) {
-//            this.currentPassengers = this.currentPassengers + numberOfPassengers;
-//            System.out.println("Ušlo je putnika: " + numberOfPassengers);
-//        } else {
-//            System.out.println("Nema više putnika"); 
-//        }
-//    }
-//
-//    public void getOut(int umberOfPassengers) {
-//
-//    }
+    public void getIn(int numberOfPassengers) {
+        if (this.currentPassengers + numberOfPassengers <= maxPassengers) {
+            this.currentPassengers = this.currentPassengers + numberOfPassengers;
+            System.out.println("Ušlo " + numberOfPassengers + ", trenutno putnika: " + this.currentPassengers + "\n");
+        } else {
+            System.out.println("Nema mesta za " + numberOfPassengers + " putnika, Slobodnih mesta: " + (this.maxPassengers - currentPassengers));
+        }
+    }
+
+    public void getOut(int numberOfPassengers) {
+        if (this.currentPassengers >= numberOfPassengers) {
+            this.currentPassengers = this.currentPassengers - numberOfPassengers;
+            System.out.println("Izaslo je " + numberOfPassengers + " putnika. Ostalo je " + this.currentPassengers);
+        } else {
+            System.out.println("Nema toliko putnika u automobilu");
+        }
+    }
 
     public void changeMaxPassengers(int newMax) {
         this.maxPassengers = newMax;
     }
 
+    public void changeCurrentPassengers(int newCurrent) {
+        this.currentPassengers = newCurrent;
+    }
 }
